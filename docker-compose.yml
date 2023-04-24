@@ -5,6 +5,17 @@ networks:
     driver: bridge
 
 services:
+  nginx:
+    container_name: nginx
+    depends_on:
+      - demo-app
+      - react-app
+    build:
+      dockerfile: Dockerfile
+      context: "D:/PatientPortal2/Hosptial_React-master/"
+    ports:
+      - 80:80
+
   demo-app:
     image: docker.io/library/patientdemo  
     

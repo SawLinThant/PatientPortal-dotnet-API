@@ -46,7 +46,7 @@ namespace HospitalDemo.Controllers
             _config["Jwt:Issuer"],
             _config["Jwt:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(1),
+            expires: DateTime.Now.AddMinutes(10),
             signingCredentials: credentials);
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
             var access_token = tokenString;
